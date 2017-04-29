@@ -12,6 +12,7 @@ namespace MassBuffer
         void WriteData(string data, int i);
         string[] GetArrData();
         int GetArrCount();
+        string SetDataInBuffer(int index);
     }
 
     class BufferModel : IBufferModel
@@ -37,6 +38,11 @@ namespace MassBuffer
         int IBufferModel.GetArrCount()
         {
             return COUNT;
+        }
+
+        string IBufferModel.SetDataInBuffer(int index)
+        {
+            return _data[index];
         }
     }
 }

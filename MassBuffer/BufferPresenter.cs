@@ -18,10 +18,10 @@ namespace MassBuffer
             _model = model;
         }
 
-        public void LoadData()
+        public void SetDataInBuffer(int index)
         {
-            var data = _model.LoadData();
-            _view.SetData(data);
+            var data = _model.SetDataInBuffer(index);
+            _view.SetDataInBuffer(data);
         }
 
         public void WriteData(string data)

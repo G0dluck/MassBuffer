@@ -14,6 +14,7 @@ namespace MassBuffer
     {
         void SetData(string[] data);
         void ViewData(string data, int i);
+        void SetDataInBuffer(string data);
     }
 
     public partial class BufferView : Form, IBufferView
@@ -59,7 +60,12 @@ namespace MassBuffer
 
         private void button1_Click(object sender, EventArgs e)
         {
-            _presenter.LoadData();
+            _presenter.SetDataInBuffer(listBox1.SelectedIndex);
+        }
+
+        void IBufferView.SetDataInBuffer(string data)
+        {
+            Clipboard.SetText(data);
         }
     }
 }
